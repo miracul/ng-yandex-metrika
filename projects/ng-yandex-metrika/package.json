@@ -8,6 +8,9 @@
     "ng",
     "angular"
   ],
+  "scripts": {
+    "postinstall": "ng-packagr -p package.json"
+  },
   "author": "Lyubimov Roman",
   "license": "MIT",
   "peerDependencies": {
