@@ -8,10 +8,6 @@
     "ng",
     "angular"
   ],
-  "scripts": {
-    "install": "npm install && ng-packagr -p package.json",
-    "postinstall": "npm install && ng-packagr -p package.json"
-  },
   "author": "Lyubimov Roman",
   "license": "MIT",
   "peerDependencies": {
