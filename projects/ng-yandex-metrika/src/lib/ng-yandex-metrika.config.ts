@@ -19,7 +19,7 @@ export interface CounterConfig {
   ecommerce?: string;
   triggerEvent?: boolean;
   alternative?: boolean;
-  lazyConfigModifier: ConfigModifier;
+  lazyConfigModifier?: ConfigModifier;
 }
 
 export class YandexCounterConfig  implements CounterConfig {
@@ -34,5 +34,5 @@ export class YandexCounterConfig  implements CounterConfig {
   ecommerce?: string;
   triggerEvent?: boolean;
   alternative?: boolean;
-  lazyConfigModifier: ConfigModifier;
+  lazyConfigModifier?: ConfigModifier;
 }
