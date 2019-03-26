@@ -64,11 +64,15 @@ export function createConfigs(configs: CounterConfig | CounterConfig[]) {
 }
 
 export function appInitializerFactory(counterConfigs: YandexCounterConfig[], platformId: any) {
-  if (isPlatformBrowser(platformId)) {
-    return insertMetrika.bind(null, counterConfigs);
+  if (!isPlatformBrowser(platformId)) {
+    return () => 'none';
   }
-
-  return () => 'none';
+  counterConfigs.forEach(counterConfig => {
+    if (counterConfig.lazyConfigModifier !== undefined) {
+      counterConfig.lazyConfigModifier(counterConfig);
+    }
+  });
+  return insertMetrika.bind(null, counterConfigs);
 }
 
 export function insertMetrika(counterConfigs: YandexCounterConfig[]) {

@@ -5,6 +5,8 @@ export const DEFAULT_COUNTER_ID = new InjectionToken<number | string>('DEFAULT_C
 export const YANDEX_COUNTERS_CONFIGS_AOT = new InjectionToken<YandexCounterConfig[]>('YANDEX_COUNTERS_CONFIGS_AOT');
 export const YANDEX_COUNTERS_CONFIGS = new InjectionToken<YandexCounterConfig[]>('YANDEX_COUNTERS_CONFIGS');
 
+type ConfigModifier = (CounterConfig) => YandexCounterConfig;
+
 export interface CounterConfig {
   id: string | number;
   params?: any;
@@ -17,6 +19,7 @@ export interface CounterConfig {
   ecommerce?: string;
   triggerEvent?: boolean;
   alternative?: boolean;
+  lazyConfigModifier: ConfigModifier;
 }
 
 export class YandexCounterConfig  implements CounterConfig {
@@ -31,4 +34,5 @@ export class YandexCounterConfig  implements CounterConfig {
   ecommerce?: string;
   triggerEvent?: boolean;
   alternative?: boolean;
+  lazyConfigModifier: ConfigModifier;
 }
