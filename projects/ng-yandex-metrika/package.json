@@ -9,7 +9,8 @@
     "angular"
   ],
   "scripts": {
-    "postinstall": "ng-packagr -p package.json"
+    "install": "npm install && ng-packagr -p package.json",
+    "postinstall": "npm install && ng-packagr -p package.json"
   },
   "author": "Lyubimov Roman",
   "license": "MIT",
