@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "npm install && ng-packagr -p package.json"
+    "postinstall": "ng-packagr -p projects/ng-yandex-metrika/package.json"
   },
   "private": true,
   "dependencies": {
